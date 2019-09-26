@@ -1,0 +1,56 @@
+<div class="alert alert-light border" role="alert">
+    <h1 class="text-center">Colores</h1>
+</div>
+<div class="containerColors p-2">
+        <div 
+            *ngIf="colorSelected.hasOwnProperty('color')"
+            class="card col-md-12 h h-100 mb-2 pl-1 pr-1 text-center h3" 
+            [style.background] = "colorSelected.color"
+        >
+            
+            <div class="card-header border-0 text-left text-white"> 
+                    {{colorSelected.year}} 
+            </div>
+            <div class="card-body align-items-center d-flex justify-content-center">
+                <div class="">
+                    <p class="card-text"><strong>¡Copiado!</strong></p>
+                </div>
+            </div>
+            <div class="card-footer text-white border-0 text-right">{{colorSelected.pantone_value}}</div>
+        </div>
+    <div *ngIf="!colorSelected.hasOwnProperty('color')" class="row p-1">
+        <div  *ngFor="let color of colors" class="col-md-4 col-sm-4 col-xs-12 pl-1 pr-1 mb-2 pointer" (click)="selectColor(color)">
+            <div   class="card text-center" [style.background] = "color.color">
+                <div class="card-header border-0 text-left text-white">
+                    {{color.year}}
+                </div>
+                <div class="card-body align-items-center d-flex justify-content-center">
+                    <div class="">
+                            <h5 class="card-title">{{color.name}}</h5>
+                            <p class="card-text"><strong>{{color.color}}</strong></p>
+                    </div>
+                </div>
+                <div class="card-footer text-white border-0 text-right">
+                    {{color.pantone_value}}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="card">
+    <div class="card-body">
+            <a 
+                href="#" 
+                *ngIf="page == 2" 
+                (click)="callList(page - 1)" 
+                class="card-link"
+            >< Anterior</a>
+            <a 
+                href="#" 
+                *ngIf="page == 1" 
+                (click)="callList(page + 1)" 
+                class="card-link float-right"
+            >Siguiente ></a>
+    </div>
+</div>
