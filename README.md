@@ -5,6 +5,10 @@ Aplicación creada para que se cumplan los estandares de colores definidos por l
  - Javascript: Angular 8+
  - Css: Bootstrap 4
 
+## Tecnologias usadas
+ - [https://www.npmjs.com/package/ngx-toastr](https://www.npmjs.com/package/ngx-toastr)
+ - [https://github.com/maxisam/ngx-clipboard](https://github.com/maxisam/ngx-clipboard)
+
 ## Instalación
 
 Se debe ejecutar el comando `npm install` dentro de la carpeta de la aplicación.
